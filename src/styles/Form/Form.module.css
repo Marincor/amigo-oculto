@@ -1,0 +1,40 @@
+
+
+@media screen and (min-width: 0px) {
+
+    .form {
+
+  
+        margin: 1rem;
+        margin-left:  50%;
+        display: flex;
+        padding: 1rem;
+        width: 15rem;
+        min-height: 10rem;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+}
+
+@media screen and (min-width: 768px) { 
+
+
+    .form{
+
+
+        margin-right: 20%;
+    }
+}
+
+
+@media screen and (min-width: 1024px) { 
+
+
+    .form{
+
+
+        margin-right: 50%;
+    }
+}

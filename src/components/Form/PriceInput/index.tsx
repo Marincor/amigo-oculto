@@ -3,11 +3,14 @@ import { useContext } from "react";
 import { InfoContext } from "../../../contexts/InputInfos";
 
 export default function MinPrice() {
-  const { infos, setInfos } = useContext(InfoContext);
+  const { infos, setInfos, error, setError, messageError } = useContext(InfoContext);
 
   
   return (
     <TextField
+    required
+    error={error}
+    helperText={error? messageError.minPrice: ""}
       id="outlined-basic"
       label="Preço min R$"
       variant="outlined"
@@ -15,7 +18,8 @@ export default function MinPrice() {
       value={infos.minPrice}
       onChange={(e)=>{
 
-        setInfos({...infos, minPrice: e.target.value})
+        setInfos({...infos, minPrice: e.target.value});
+        setError(false)
       }}
     />
   );

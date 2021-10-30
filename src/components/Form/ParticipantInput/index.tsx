@@ -4,11 +4,14 @@ import { InfoContext } from "../../../contexts/InputInfos";
 
 export default function Participants() {
 
-  const { infos, setInfos } = useContext(InfoContext);
+  const { infos, setInfos, error, messageError } = useContext(InfoContext);
 
   return (
     <>
       <TextField
+      required
+      error={error}
+      helperText={error? messageError.names: ""}
         id="outlined-basic"
         label="Nome"
         variant="outlined"
@@ -20,6 +23,9 @@ export default function Participants() {
         }}
       />
          <TextField
+         required
+            error={error}
+            helperText={error? messageError.emails: ""}
         id="outlined-basic"
         label="email"
         variant="outlined"

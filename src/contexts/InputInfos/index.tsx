@@ -13,14 +13,25 @@ export const InfoProvider = (props: any) => {
           date: null,
           minPrice: null, 
           participants: null,
-          names: [],
-          emails: []
+          names: null,
+          emails: null
       }
 
     )
 
+    const [error, setError] = useState(false)
+
+    const messageError = {
+
+        date: "Preencha a data que ocorrerá a entrega",
+        minPrice: "Informe o valor mínimo do amigo oculto",
+        participants: "Min: 2 | Max: 30",
+        names: "Informe o nome do participante",
+        emails: "Informe o email do participante",
+    }
+
     return(
-        <InfoContext.Provider value={{infos, setInfos}}>
+        <InfoContext.Provider value={{infos, setInfos, error, setError, messageError}}>
             {props.children}
         </InfoContext.Provider>
 
