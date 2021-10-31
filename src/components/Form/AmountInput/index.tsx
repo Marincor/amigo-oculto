@@ -6,7 +6,6 @@ export default function ParticipantAmount() {
   const { infos, setInfos, error, setError, messageError } =
     useContext(InfoContext);
 
-    console.log(error, setError, messageError)
 
   return (
     <TextField

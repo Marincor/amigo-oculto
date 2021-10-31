@@ -1,5 +1,5 @@
 import DateForm from "./DateInput";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { StepContext } from "../../contexts/Step";
 import MinPrice from "./PriceInput";
@@ -31,7 +31,11 @@ export default function Form() {
         }
         break;
       case 2:
-        if (infos.participants !== null && infos.participants > 1 && infos.participants < 31) {
+        if (
+          infos.participants !== null &&
+          infos.participants > 1 &&
+          infos.participants < 31
+        ) {
           setStep(step + 1);
           setError(false);
           setInfos({
@@ -44,29 +48,18 @@ export default function Form() {
             ),
             ids: Array.from(new Array(infos.participants)).map(
               (participant) => participant
-            )
+            ),
           });
-
         } else {
           setError(true);
         }
         break;
       default:
         return false;
-       
     }
   }
 
-  const arrayParticipants = +infos.participants > 0 ? Array(+infos.participants).fill(0) : [];
-
-
-
-
- 
-
   function renderInputs() {
-
-
     switch (step) {
       case 0:
         return <DateForm />;
@@ -78,16 +71,21 @@ export default function Form() {
         return <ParticipantAmount />;
         break;
       case 3:
-        return  <Participants />;
+        return <Participants />;
         break;
       default:
-        return <p>concluído com sucesso</p>;
+        return (
+          <Typography variant="subtitle1" component="h2">
+            Dados do amigo oculto coletado, os participantes receberão um e-mail
+            com as orientações.
+          </Typography>
+        );
         break;
     }
   }
 
   function createGame() {
-    if (infos.names !== null && infos.emails !== null) {
+    if (!infos.names.includes(undefined) && !infos.emails.includes(undefined)) {
       infos.names !== "" && infos.emails !== ""
         ? (setStep(step + 1), setError(false))
         : false;
@@ -95,9 +93,6 @@ export default function Form() {
       setError(true);
     }
   }
-
-
-  
 
   return (
     <form className={styles.form}>

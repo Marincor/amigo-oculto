@@ -1,0 +1,43 @@
+
+
+@media screen and (min-width: 0px) {
+    
+
+    .participantContainer {
+
+        display: flex;
+        margin: 1rem;
+        padding: 1rem;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .ParticipantInput {
+
+       
+        margin: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    
+    .participantContainer { 
+
+        width: 30%;
+    }
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    
+    .participantContainer { 
+
+        width: 20%;
+    }
+    
+}

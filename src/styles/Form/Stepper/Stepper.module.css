@@ -1,0 +1,11 @@
+.container{
+
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    height: auto;
+    padding: 0rem 5rem;
+    transform: translate(2%, 0%);
+ 
+   
+}

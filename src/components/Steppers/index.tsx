@@ -1,9 +1,9 @@
-import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { useContext } from "react";
 import { StepContext } from "../../contexts/Step";
+import styles from '../../styles/Form/Stepper/Stepper.module.css'
 
 const steps = [
   "Quando os presentes serão entregues?",
@@ -17,7 +17,7 @@ export default function StepperForm() {
 const {step} = useContext(StepContext)
 
   return (
-    <Box sx={{ width: "50%" }}>
+    <div className={styles.container}>
       <Stepper activeStep={step} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
@@ -25,6 +25,6 @@ const {step} = useContext(StepContext)
           </Step>
         ))}
       </Stepper>
-    </Box>
+    </div>
   );
 }
