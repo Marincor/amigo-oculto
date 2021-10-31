@@ -1,40 +1,34 @@
-import { createContext, useState } from "react";
-
+import { createContext, useEffect, useState } from "react";
 
 export const InfoContext = createContext(null);
 
-InfoContext.displayName = "Info of the ocult friend"
+InfoContext.displayName = "Info of the ocult friend";
 
 export const InfoProvider = (props: any) => {
+  const [infos, setInfos] = useState({
+    date: null,
+    minPrice: null,
+    participants: null,
+    names: null,
+    emails: null,
+    ids: null
+  });
 
-    const [infos, setInfos] = useState(
+  const [error, setError] = useState(false);
 
-      {
-          date: null,
-          minPrice: null, 
-          participants: null,
-          names: null,
-          emails: null
-      }
+  const messageError = {
+    date: "Preencha a data que ocorrerá a entrega",
+    minPrice: "Informe o valor mínimo do amigo oculto",
+    participants: "Min: 2 | Max: 30",
+    names: "Informe o nome do participante",
+    emails: "Informe o email do participante",
+  };
 
-    )
-
-    const [error, setError] = useState(false)
-
-    const messageError = {
-
-        date: "Preencha a data que ocorrerá a entrega",
-        minPrice: "Informe o valor mínimo do amigo oculto",
-        participants: "Min: 2 | Max: 30",
-        names: "Informe o nome do participante",
-        emails: "Informe o email do participante",
-    }
-
-    return(
-        <InfoContext.Provider value={{infos, setInfos, error, setError, messageError}}>
-            {props.children}
-        </InfoContext.Provider>
-
-
-    )
-}
+  return (
+    <InfoContext.Provider
+      value={{ infos, setInfos, error, setError, messageError }}
+    >
+      {props.children}
+    </InfoContext.Provider>
+  );
+};

@@ -1,6 +1,6 @@
 import DateForm from "./DateInput";
 import { Button } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { StepContext } from "../../contexts/Step";
 import MinPrice from "./PriceInput";
 import ParticipantAmount from "./AmountInput";
@@ -34,6 +34,19 @@ export default function Form() {
         if (infos.participants !== null && infos.participants > 1 && infos.participants < 31) {
           setStep(step + 1);
           setError(false);
+          setInfos({
+            ...infos,
+            names: Array.from(new Array(infos.participants)).map(
+              (participant) => participant
+            ),
+            emails: Array.from(new Array(infos.participants)).map(
+              (participant) => participant
+            ),
+            ids: Array.from(new Array(infos.participants)).map(
+              (participant) => participant
+            )
+          });
+
         } else {
           setError(true);
         }
@@ -44,10 +57,15 @@ export default function Form() {
     }
   }
 
+  const arrayParticipants = +infos.participants > 0 ? Array(+infos.participants).fill(0) : [];
 
+
+
+
+ 
 
   function renderInputs() {
-    const arrayParticipants = +infos.participants > 0 ? Array(+infos.participants).fill(0) : [];
+
 
     switch (step) {
       case 0:
@@ -60,14 +78,7 @@ export default function Form() {
         return <ParticipantAmount />;
         break;
       case 3:
-        return arrayParticipants.map((participant) => {
-          return (
-            <div key={participant}>
-              <Participants />
-            </div>
-          );
-        });
-
+        return  <Participants />;
         break;
       default:
         return <p>concluído com sucesso</p>;
@@ -84,6 +95,9 @@ export default function Form() {
       setError(true);
     }
   }
+
+
+  
 
   return (
     <form className={styles.form}>
