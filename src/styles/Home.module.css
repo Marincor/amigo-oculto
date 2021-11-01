@@ -25,6 +25,16 @@
      
     }
 
+    .footer{
+
+      background-color: rgb(103, 103, 204);
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+
   
 }
 

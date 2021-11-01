@@ -19,7 +19,7 @@ export const InfoProvider = (props: any) => {
   const messageError = {
     date: "Preencha a data que ocorrerá a entrega",
     minPrice: "Informe o valor mínimo do amigo oculto",
-    participants: "Min: 2 | Max: 30",
+    participants: "Min: 2 | Max: 10",
     names: "Informe o nome do participante",
     emails: "Informe o email do participante",
   };

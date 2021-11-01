@@ -36,7 +36,7 @@ export default function Form() {
         if (
           infos.participants !== null &&
           infos.participants > 1 &&
-          infos.participants < 31
+          infos.participants < 11
         ) {
           setStep(step + 1);
           setError(false);
@@ -77,8 +77,8 @@ export default function Form() {
         break;
       default:
         return (
-          <Typography variant="subtitle1" component="h2">
-            Dados do amigo oculto coletado, os participantes receberão um e-mail
+          <Typography variant="subtitle1" component="h2" fontWeight="bold">
+            Dados do amigo oculto coletados, os participantes receberão um e-mail
             com as orientações.
           </Typography>
         );

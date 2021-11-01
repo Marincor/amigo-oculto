@@ -28,9 +28,19 @@ export const GameProvider = (props: any) => {
 
   // condition to shufle ID's //
   const checkUnity = (array, position) => {
-    if (array[position] === gameArr[2][position]) {
-      shuffleArray(array);
+
+    let count = 0;
+    while(count < array.length) {
+
+      count++
+
+      if (array[position] === gameArr[2][position]) {
+        shuffleArray(array);
+        count = 0
+      }
+
     }
+
 
     return console.log(array[position] === gameArr[2][position]);
   };
