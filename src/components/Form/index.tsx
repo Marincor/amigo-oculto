@@ -1,16 +1,18 @@
 import DateForm from "./DateInput";
 import { Button, Typography } from "@mui/material";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { StepContext } from "../../contexts/Step";
 import MinPrice from "./PriceInput";
 import ParticipantAmount from "./AmountInput";
 import Participants from "./ParticipantInput/index";
 import { InfoContext } from "../../contexts/InputInfos";
 import styles from "../../styles/Form/Form.module.css";
+import { GameContext } from "../../contexts/Game/index";
 
 export default function Form() {
   const { step, setStep } = useContext(StepContext);
   const { infos, setInfos, error, setError } = useContext(InfoContext);
+  const { gameArr, setGameArr, sendEmails, to, body } = useContext(GameContext);
 
   function handleStep() {
     switch (step) {
@@ -86,8 +88,12 @@ export default function Form() {
 
   function createGame() {
     if (!infos.names.includes(undefined) && !infos.emails.includes(undefined)) {
+      const newArr = [infos.names, infos.emails, infos.ids];
+   
+
       infos.names !== "" && infos.emails !== ""
-        ? (setStep(step + 1), setError(false))
+        ? (setStep(step + 1), setError(false), setGameArr(newArr)
+        )
         : false;
     } else {
       setError(true);

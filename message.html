@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Oculto</title>
+    <style>
+
+        .container {
+
+            display: flex;
+            font-family: sans-serif;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            overflow-x: hidden;
+        }
+
+        .main {
+
+          display: flex;
+          flex-direction: column;
+          color: gray;
+          font-weight: bold;
+        }
+
+        .ocult {
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .ocult__title{
+
+           color: darkblue;
+           font-weight: bold;
+           font-size: 4rem;
+           font-family: monospace;
+
+        }
+
+        .creator {
+            display: flex;
+            background-color: whitesmoke;
+            border-radius: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="container">
+    `<main class="main">
+    
+    
+        <section class="ocult">
+
+       
+        <h2 class="ocult__name">Olá, ${name} ! Nossas boas-vindas ao</h2> <h1 class="ocult__title">Amigo Oculto!</h1> 
+        <hr/> <p style="color:gray">Sua amizade oculta é: <strong> ${friend}</strong>. A data da entrega do presente será em <strong>${date}</strong>  e o valor mínimo do presente deverá ser de R$ <strong>${+infos?.minPrice}</strong> reais. </p> <br/>
+        <p style="color: gray"> Aaah... não se esqueça de guardar segredo até o grande dia, hein?! </p>
+        <img alt="gif homem pedindo segredo" src="https://i.pinimg.com/originals/75/6f/5a/756f5afdc1102831b1859634dc7c38f5.gif" width="400px" />
+
+    </div>
+        <p style="color: gray">Seu número da sorte é esse: ${
+          gameArr[2][position]
+        }. Cada participante recebe um número da sorte, esse número garante que ninguem da brincadeira retire a mesma pessoa. Nessa edição irão participar ${
+          gameArr[0]?.length
+        } pessoas. Segue a lista com os números da sorte dessa edição: <br/> ${listIds} - <br/><br/>Obs: Os números da sorte são apenas para que você confirme que todos os participantes retiraram uma pessoa diferente, não revele seu número da sorte para ninguém. </p>
+        </section> `;
+
+        <section class="creator">
+
+            <p class="creater__text">Amigo oculto foi criado por: </p> <a href="https://github.com/Marincor" target="blank" class="creater__link">Marincor</a>
+        </section>
+</body>
+</html>
