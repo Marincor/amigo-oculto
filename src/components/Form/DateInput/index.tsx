@@ -52,7 +52,7 @@ const dateFormated = infos?.date ? `${dateDay}/${dateMonth}/${dateYear}` : false
             onFocusCapture={(e) => {
 
               // click on calendar at the focus //
-              const buttonCalendar = document.querySelector(".MuiButtonBase-root");
+              const buttonCalendar: HTMLElement  = document.querySelector(".MuiButtonBase-root");
 
               buttonCalendar.click()
             }}
