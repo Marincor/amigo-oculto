@@ -45,7 +45,7 @@ function renderAnimation() {
     <div className={styles.container}>
       <Head>
         <title>Amigo Oculto</title>
-        <meta name="description" content="Faça suas festas de amigo secrete com o Amigo Oculto! - Coded and created by: Marincor." />
+        <meta name="description" content="Faça suas festas de amigo secreto com o Amigo Oculto! - Coded and created by: Marincor." />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
