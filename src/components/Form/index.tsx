@@ -10,10 +10,14 @@ import styles from "../../styles/Form/Form.module.css";
 import { GameContext } from "../../contexts/Game/index";
 
 export default function Form() {
+
+  // contexts of stepper, infos, erros and the array of the game formed by the infos //
   const { step, setStep } = useContext(StepContext);
   const { infos, setInfos, error, setError } = useContext(InfoContext);
-  const { gameArr, setGameArr, sendEmails, to, body } = useContext(GameContext);
+  const {  setGameArr } = useContext(GameContext);
 
+
+  // function to handle step material-ui //
   function handleStep() {
     switch (step) {
       case 0:
@@ -61,6 +65,11 @@ export default function Form() {
     }
   }
 
+
+  
+
+  // function to render inputs by the stepper  //
+
   function renderInputs() {
     switch (step) {
       case 0:
@@ -85,6 +94,10 @@ export default function Form() {
         break;
     }
   }
+
+
+
+  // function to get all inputs informations //
 
   function createGame() {
     if (!infos.names.includes(undefined) && !infos.emails.includes(undefined)) {

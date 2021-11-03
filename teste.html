@@ -1,91 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { InfoContext } from "../InputInfos/index";
-import { Email } from "../../services/email/emailSender";
-import sendEmails from "../../functions/mail";
-
-export const GameContext = createContext(null);
-
-GameContext.displayName = "Game";
-
-export const GameProvider = (props: any) => {
-
-
-  const [gameArr, setGameArr] = useState([]);
-  const { infos } = useContext(InfoContext);
-
-  // get the ID's //
-  const arrID = Array.from(gameArr[2] ?? []);
-
-  // shuffle ID's function //
-
-  function shuffleArray(arr) {
-    // Loop in elements
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      // Element reposition
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-
-    return arr;
-  }
-
-  // condition to shufle ID's //
-  const checkUnity = (array, position) => {
-
-    let count = 0;
-    while(count < array.length) {
-
-      count++
-
-      if (array[position] === gameArr[2][position]) {
-        shuffleArray(array);
-        count = 0
-      }
-
-    }
-
-
-    return console.log(array[position] === gameArr[2][position]);
-  };
-
-  // map to apply condition of shuffle //
-
-  gameArr[0]?.map((arr, position) => {
-    checkUnity(arrID, position);
-  });
-
-  // number of lucky list //
-
-  const listIds = gameArr[0]?.map((name, position) => {
-    return `
-    <tr>
-      <td>${gameArr[2][position]}</td>
-      <td>${arrID[position]}</td>
-    </tr>
-  
-    `;
-  });
-
-  // form ocult friend //
-  function formOcultFriend() {
-    let arrBody = [];
-    let arrEmails = [];
-
-    gameArr[0]?.map((name, position) => {
-      const findIndexFriend = gameArr[2].findIndex(
-        (item) => item === arrID[position]
-      );
-      const friend = gameArr[0][findIndexFriend];
-      const date = `${JSON.stringify(infos?.date).substr(
-        9,
-        2
-      )} / ${JSON.stringify(infos?.date).substr(6, 2)} / ${JSON.stringify(
-        infos?.date
-      ).substr(1, 4)} `;
-
-      //message of email body //
-
-      const body = `<!DOCTYPE html>
+<!DOCTYPE html>
       <html lang="en">
       <head>
           <meta charset="UTF-8">
@@ -96,17 +9,14 @@ export const GameProvider = (props: any) => {
       
               .container {
       
-                  display: flex;
+            
                   font-family: sans-serif;
-                  flex-direction: column;
-                  justify-content: center;
                   padding: 4rem;
                   overflow-x: hidden;
               }
       
               .main {
       
-                display: flex;
                 flex-direction: column;
                 color: gray;
                 font-weight: bold;
@@ -114,7 +24,6 @@ export const GameProvider = (props: any) => {
       
               .ocult {
       
-                  display: flex;
                   justify-content: center;
                   flex-direction: column;
               }
@@ -178,43 +87,4 @@ export const GameProvider = (props: any) => {
                   <p class="creater__text">Amigo oculto foi criado por: </p> <a href="https://github.com/Marincor" target="blank" class="creater__link">Marincor</a>
               </section>
       </body>
-      </html>`;
-
-      return arrBody.push(body), arrEmails.push(gameArr[1][position]);
-    });
-
-    const params = {
-      body: arrBody,
-      emails: arrEmails,
-    };
-
-    return params;
-  }
-
-
-// states of emails array  and body messages array //
-  const [to, setTo] = useState(null);
-  const [body, setBody] = useState(null);
-
-  // getting the emails and the custom message //
-
-  useEffect(() => {
-    if (gameArr.length > 0) {
-      setTo(formOcultFriend().emails);
-      setBody(formOcultFriend().body);
-    }
-  }, [gameArr]);
-
-  // sending email after click (body changed from null to true array) //
-
-  if (body) {
-    sendEmails(to, body);
-    setBody(null);
-  }
-
-  return (
-    <GameContext.Provider value={{ gameArr, setGameArr, sendEmails, to, body }}>
-      {props.children}
-    </GameContext.Provider>
-  );
-};
+      </html>`

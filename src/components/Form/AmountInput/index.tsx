@@ -8,6 +8,7 @@ export default function ParticipantAmount() {
 
 
   return (
+    // Amount of participants input //
     <TextField
     required
       error={error}

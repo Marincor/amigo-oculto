@@ -18,6 +18,7 @@ export default function Home() {
 
 const {step} = useContext(StepContext)
 
+// change animation by stepper//
 function renderAnimation() {
 
   let currentAnimation = null;

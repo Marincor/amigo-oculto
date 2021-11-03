@@ -5,6 +5,7 @@ import { InfoContext } from "../../../contexts/InputInfos";
 export default function MinPrice() {
   const { infos, setInfos, error, setError, messageError } = useContext(InfoContext);
 
+  // min price input //
   
   return (
     <TextField

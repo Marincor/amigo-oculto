@@ -18,7 +18,8 @@ export default function Participants() {
   };
 
   const handlerNameChange = (position) => (e) => {
-    // id of the participant //
+
+    // new array of id's //
     const arrID = infos.ids;
     arrID[position] = Math.round(Math.random() * Math.random() * 295745);
 
@@ -42,7 +43,10 @@ export default function Participants() {
         return (
           <div key={participant} className={styles.participantContainer}>
 
+               {/* Counting the current input for user */}
             <Typography variant="caption" component="h4"> {position+1} / {arrFocus.length} </Typography>
+            
+            {/* Input Name */}
             <TextField
                className={styles.ParticipantInput}
               required
@@ -58,6 +62,8 @@ export default function Participants() {
               onChange={handlerNameChange(position)}
              
             />
+
+               {/* Input Email */}
             <TextField
           className={styles.ParticipantInput}
 
