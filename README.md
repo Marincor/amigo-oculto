@@ -38,7 +38,7 @@ Aplicação para sorteio de amigos secretos. Foi útilizado a API de disparo de 
 
 3° Informe quantos participantes haverão (mínimo 2 e máximo 10);
 
-4° Informe os nomes e emails dos participantes;
+4° Informe o nome e email dos participantes;
 
 5° Clique em finalizar;
 
