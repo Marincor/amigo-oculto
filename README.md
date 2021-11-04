@@ -2,7 +2,7 @@
 
 > Aplicação para sorteio de amigo secreto
 
-☰ <a href="https://github.com/Marincor/amigo-oculto/#Responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/amigo-oculto/#Aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/amigo-oculto/#Sobre"> Sobre </a> | <a href="https://github.com/Marincor/amigo-oculto/#Funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/amigo-oculto/#tecnologias-usadas"> Tecnologias usadas </a>
+☰ <a href="https://github.com/Marincor/amigo-oculto/#-responsividade"> Responsividade </a> | <a href="https://github.com/Marincor/amigo-oculto/#-aplicação"> Aplicação </a> | <a href="https://github.com/Marincor/amigo-oculto/#-sobre"> Sobre </a> | <a href="https://github.com/Marincor/amigo-oculto/#-funcionalidades"> Funcionalidades </a> | <a href="https://github.com/Marincor/amigo-oculto/#-tecnologias-usadas"> Tecnologias usadas </a>
 
 <hr/>
 
