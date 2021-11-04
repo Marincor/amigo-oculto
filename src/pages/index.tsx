@@ -14,6 +14,7 @@ import styles from "../styles/Home.module.css";
 import Image from 'next/image'
 import Logo from '../../public/assets/img/logo.png'
 
+
 export default function Home() {
 
 const {step} = useContext(StepContext)
@@ -49,6 +50,7 @@ function renderAnimation() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <meta property="og:image" content="../../public/assets/img/logo.png" />
       </Head>
       <body className={styles.body}>
 
